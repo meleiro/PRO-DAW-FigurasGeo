@@ -8,7 +8,7 @@
 //
 // La idea es que Figura sirva como clase base para otras clases más concretas,
 // como Circulo, Rectangulo, Triangulo, etc.
-public abstract class Figura {
+public abstract class Figura implements Redimensionable{
 
     // Atributo protegido llamado id.
     //
@@ -28,6 +28,7 @@ public abstract class Figura {
     // Sirve para inicializar los atributos comunes de todas las figuras.
     public Figura(String id) {
         this.id = id;
+
     }
 
     // Método abstracto para calcular el área.

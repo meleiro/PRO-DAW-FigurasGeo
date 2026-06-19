@@ -4,11 +4,13 @@ public class Main {
 
     public static void main(String[] args) {
 
+
         /*
          * Creamos un objeto Scanner para leer datos
          * introducidos por teclado.
          */
         Scanner sc = new Scanner(System.in);
+
 
         /*
          * Creamos un array de Figura.
@@ -51,6 +53,7 @@ public class Main {
          * Esto es polimorfismo.
          */
         figuras[0] = new Circulo(idCirculo, radio);
+        figuras[0].redimensionar(2);
 
         /*
          * ==========================
@@ -158,6 +161,8 @@ public class Main {
                     "Perímetro: "
                             + figura.calcularPerimetro()
             );
+
+
         }
 
         /*
@@ -168,24 +173,29 @@ public class Main {
          * Hace exactamente lo mismo que el anterior,
          * pero utilizando índices.
          */
+        imprimirFiguras(figuras);
+
         for (int i = 0; i < figuras.length; i++) {
-
-            System.out.println(figuras[i]);
-
-            System.out.println(
-                    "Area: "
-                            + figuras[i].calcularArea()
-            );
-
-            System.out.println(
-                    "Perímetro: "
-                            + figuras[i].calcularPerimetro()
-            );
+            figuras[i].redimensionar(2);
         }
 
+        imprimirFiguras(figuras);
         /*
          * Cerramos el Scanner para liberar recursos.
          */
+
+
+
         sc.close();
+    }
+
+    public static void imprimirFiguras(Figura[] salchicha){
+
+        for (Figura fig : salchicha){
+            System.out.println(fig);
+            System.out.println("Área:" + fig.calcularArea() );
+            System.out.println("Perímetro:" + fig.calcularPerimetro() );
+        }
+
     }
 }

@@ -11,7 +11,7 @@
  *
  * Además hereda el atributo id definido en Figura.
  */
-public class Triangulo extends Figura {
+public class Triangulo extends Figura implements Redimensionable{
 
     /*
      * Base del triángulo.
@@ -97,6 +97,45 @@ public class Triangulo extends Figura {
     @Override
     public double calcularArea() {
         return (base * altura) / 2;
+    }
+
+    /*
+     * @Override indica que este método está implementando
+     * el método definido en la interfaz Redimensionable.
+     */
+    @Override
+    public void redimensionar(double factor) {
+
+        /*
+         * Multiplicamos la base por el factor indicado.
+         *
+         * Si base = 10 y factor = 2,
+         * la nueva base será 20.
+         */
+        this.base = this.base * factor;
+
+        /*
+         * Multiplicamos la altura por el mismo factor.
+         *
+         * Si altura = 5 y factor = 2,
+         * la nueva altura será 10.
+         */
+        this.altura = this.altura * factor;
+
+        /*
+         * Multiplicamos el primer lado.
+         */
+        this.lado1 = this.lado1 * factor;
+
+        /*
+         * Multiplicamos el segundo lado.
+         */
+        this.lado2 = this.lado2 * factor;
+
+        /*
+         * Multiplicamos el tercer lado.
+         */
+        this.lado3 = this.lado3 * factor;
     }
 
     /*

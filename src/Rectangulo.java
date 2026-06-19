@@ -11,7 +11,7 @@
  *
  * Además hereda el atributo id definido en Figura.
  */
-public class Rectangulo extends Figura {
+public class Rectangulo extends Figura implements Redimensionable {
 
     /*
      * Base del rectángulo.
@@ -66,6 +66,40 @@ public class Rectangulo extends Figura {
     @Override
     public double calcularPerimetro() {
         return 2 * (base + altura);
+    }
+    /*
+     * @Override indica que estamos implementando
+     * el método definido en la interfaz Redimensionable.
+     *
+     * Java comprobará que existe un método con esa
+     * misma firma en la interfaz.
+     */
+    @Override
+    public void redimensionar(double factor) {
+
+        /*
+         * Multiplicamos la base actual por el factor.
+         *
+         * Ejemplo:
+         *
+         * base = 10
+         * factor = 2
+         *
+         * nueva base = 20
+         */
+        this.base = this.base * factor;
+
+        /*
+         * Multiplicamos la altura actual por el mismo factor.
+         *
+         * Ejemplo:
+         *
+         * altura = 5
+         * factor = 2
+         *
+         * nueva altura = 10
+         */
+        this.altura = this.altura * factor;
     }
 
     /*
